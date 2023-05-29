@@ -1,9 +1,9 @@
 import Fastify from 'fastify'
-import { appRoutes } from './routes'
+import { memoriesRoutes } from './routes/memories'
 
 const app = Fastify()
 
-void app.register(appRoutes)
+void app.register(memoriesRoutes)
 
 app.listen({
   port: 3333
