@@ -2,6 +2,7 @@ import 'dotenv/config'
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
+import multipart from '@fastify/multipart'
 
 import { authRoutes } from './routes/auth'
 import { memoriesRoutes } from './routes/memories'
@@ -9,6 +10,7 @@ import { memoriesRoutes } from './routes/memories'
 const app = Fastify()
 const PORT = 3333 || process.env.PORT
 
+app.register(multipart)
 app.register(cors, {
   origin: true,
 })
